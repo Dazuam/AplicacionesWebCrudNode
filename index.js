@@ -5,7 +5,10 @@ let webRoutes = require('./routes/web');
 
 let appConfig = require('./configs/app');
 
+let bodyParser = require('body-parser');
+
 app.use('/', webRoutes);
+app.use(bodyParser.urlencoded({ extended: true}));
 
 let exphbs = require('express-handlebars');
 const extNameHbs = 'hbs';
