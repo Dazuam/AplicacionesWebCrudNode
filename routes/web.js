@@ -8,7 +8,7 @@ router.get('/about', PagesController.about);
 
 router.get('/products', PagesController.products);
 
-router.get('/create', ProductsController.create);
+router.get('/products/create', ProductsController.create);
 
 router.post('/products', ProductsController.store);
 
