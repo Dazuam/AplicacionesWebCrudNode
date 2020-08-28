@@ -2,6 +2,8 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let app = express();
 
+let methodOverride = require('method-override')
+
 let webRoutes = require('./routes/web');
 
 let appConfig = require('./configs/app');
@@ -12,6 +14,7 @@ let hbs = exphbs.create({extname: extNameHbs});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(methodOverride('_method'))
 
 app.engine(extNameHbs, hbs.engine);
 app.set('view engine', extNameHbs);

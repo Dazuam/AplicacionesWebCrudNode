@@ -22,3 +22,16 @@ exports.find = (id) => {
       .where('id', id)
       .first();
 }
+
+exports.update = (id, product) => {
+    return knex('products')
+      .update(product)
+      .update('updated_at', knex.fn.now())
+      .where('id', id);
+}
+
+exports.delete = (id) => {
+    return knex('products')
+      .delete()
+      .where('id', id);
+}

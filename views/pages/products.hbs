@@ -1,6 +1,8 @@
 <h1>My ArtStore</h1>
 <p>Products: </p>
 {{#each products}}
-<p>{{ id }} - {{ name }} - ${{price}} - {{description}} </p>
-{{/each}}
+<p>{{ name }} - ${{price}}
+<button onclick="window.location.href='products/{{ id }}'">View</button>
+<button onclick="window.location.href='products/{{ id }}/edit/'">Edit</button>
+{{/each}}</p>
 <button onclick="window.location.href='products/create'">Create New Product</button>
